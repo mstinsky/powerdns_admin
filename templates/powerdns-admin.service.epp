@@ -1,0 +1,12 @@
+[Unit]
+Description=PowerDNS-Admin
+After=network.target
+
+[Service]
+User=root
+Group=root
+WorkingDirectory=<%= $powerdns_admin::install_path %>
+ExecStart=<%= $powerdns_admin::virtualenv_path %>/bin/gunicorn --workers <%= $powerdns_admin::workers %> --bind unix:<%= $powerdns_admin::install_path %>/powerdns-admin.sock app:app
+
+[Install]
+WantedBy=multi-user.target
