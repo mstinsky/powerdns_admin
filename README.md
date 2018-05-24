@@ -1,6 +1,8 @@
 
 # powerdns_admin
 
+[![Build Status](https://travis-ci.org/mstinsky/powerdns_admin.svg?branch=master)](https://travis-ci.org/mstinsky/powerdns_admin)
+
 #### Table of Contents
 
 1. [Description](#description)
