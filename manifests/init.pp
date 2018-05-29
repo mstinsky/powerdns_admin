@@ -37,6 +37,8 @@
 #   Specifies the powerdns api key needed to access to rest api. Defaults to `undef`.
 # @param pdns_api_url
 #   Specifies the url to the powerdns api. Defaults to `http://127.0.0.1:8081/`
+# @param app_secret_key
+#   Specifies the application key. Defaults to a random 20 character string.
 # @param workers
 #   Specifies how many workers should be started. Defaults to `1`.
 # @param python_version
