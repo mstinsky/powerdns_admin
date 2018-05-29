@@ -28,6 +28,7 @@ class powerdns_admin::params {
   $signup_enable          = false
   $pdns_api_key           = undef
   $pdns_api_url           = 'http://127.0.0.1:8081/'
+  $app_secret_key         = fqdn_rand_string(20)
   $workers                = 1
   $python_version         = 3
 }

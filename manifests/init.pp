@@ -57,6 +57,7 @@ class powerdns_admin(
   Boolean                    $signup_enable         = $::powerdns_admin::params::signup_enable,
   Optional[String[1]]        $pdns_api_key          = $::powerdns_admin::params::pdns_api_key,
   Optional[String[1]]        $pdns_api_url          = $::powerdns_admin::params::pdns_api_url,
+  String[1]                  $app_secret_key        = $::powerdns_admin::params::app_secret_key,
   Integer[1]                 $workers               = $::powerdns_admin::params::workers,
   Integer[2]                 $python_version        = $::powerdns_admin::params::python_version,
   ) inherits powerdns_admin::params {
