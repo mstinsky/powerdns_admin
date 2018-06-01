@@ -11,7 +11,7 @@ class powerdns_admin::install {
   }
 
   class { 'python' :
-    version    => "python$::{powerdns_admin::python_version}",
+    version    => "python${::powerdns_admin::python_version}",
     pip        => 'present',
     dev        => 'present',
     virtualenv => 'present',
