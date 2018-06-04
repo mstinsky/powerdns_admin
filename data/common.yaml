@@ -1,0 +1,29 @@
+---
+
+powerdns_admin::install_path: '/opt/web/powerdns-admin'
+powerdns_admin::virtualenv_path: "%{install_path}/flask"
+powerdns_admin::requirements_path: "%{install_path}/requirements.txt"
+powerdns_admin::config_path: "%{install_path}/config.py"
+powerdns_admin::required_packages:
+  - 'libmariadbclient-dev'
+  - 'libsasl2-dev'
+  - 'libldap2-dev'
+  - 'libssl-dev'
+  - 'libxml2-dev'
+  - 'libxslt1-dev'
+  - 'libxmlsec1-dev'
+  - 'libffi-dev'
+  - 'pkg-config'
+  - 'git'
+powerdns_admin::service_ensure: 'running'
+powerdns_admin::service_enable: true
+powerdns_admin::backend_install: true
+powerdns_admin::backend_create_tables: true
+powerdns_admin::db_root_password: undef
+powerdns_admin::db_password: undef
+powerdns_admin::log_level: 'WARNING'
+powerdns_admin::signup_enable: false
+powerdns_admin::pdns_api_key: undef
+powerdns_admin::pdns_api_url: 'http://127.0.0.1:8081/'
+powerdns_admin::workers: 1
+powerdns_admin::python_version: 3

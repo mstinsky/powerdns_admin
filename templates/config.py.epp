@@ -3,7 +3,7 @@ basedir = os.path.abspath(os.path.dirname(__file__))
 
 # BASIC APP CONFIG
 WTF_CSRF_ENABLED = True
-SECRET_KEY = '<%= $powerdns_admin::config::app_secret_key %>'
+SECRET_KEY = '<%= $powerdns_admin::app_secret_key %>'
 BIND_ADDRESS = '0.0.0.0'
 PORT = 9191
 LOGIN_TITLE = "PDNS"
@@ -12,7 +12,7 @@ LOGIN_TITLE = "PDNS"
 TIMEOUT = 10
 
 # LOG CONFIG
-LOG_LEVEL = 'WARNING'
+LOG_LEVEL = '<%= $powerdns_admin::log_level %>'
 LOG_FILE = 'logfile.log'
 # For Docker, leave empty string
 #LOG_FILE = ''

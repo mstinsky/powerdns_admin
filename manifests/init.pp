@@ -42,24 +42,26 @@
 # @param python_version
 #   Specifies which python version should be used. Defaults to `3`.
 class powerdns_admin(
-  String[1]                  $install_path          = $::powerdns_admin::params::install_path,
-  String[1]                  $virtualenv_path       = $::powerdns_admin::params::virtualenv_path,
-  String[1]                  $requirements_path     = $::powerdns_admin::params::requirements_path,
-  String[1]                  $config_path           = $::powerdns_admin::params::config_path,
-  Optional[Array[String[1]]] $required_packages     = $::powerdns_admin::params::required_packages,
-  Enum['running', 'stopped'] $service_ensure        = $::powerdns_admin::params::service_ensure,
-  Boolean                    $service_enable        = $::powerdns_admin::params::service_enable,
-  Boolean                    $backend_install       = $::powerdns_admin::params::backend_install,
-  Boolean                    $backend_create_tables = $::powerdns_admin::params::backend_create_tables,
-  Optional[String[1]]        $db_root_password      = $::powerdns_admin::params::db_root_password,
-  Optional[String[1]]        $db_password           = $::powerdns_admin::params::db_root_password,
-  String[1]                  $log_level             = $::powerdns_admin::params::log_level,
-  Boolean                    $signup_enable         = $::powerdns_admin::params::signup_enable,
-  Optional[String[1]]        $pdns_api_key          = $::powerdns_admin::params::pdns_api_key,
-  Optional[String[1]]        $pdns_api_url          = $::powerdns_admin::params::pdns_api_url,
-  Integer[1]                 $workers               = $::powerdns_admin::params::workers,
-  Integer[2]                 $python_version        = $::powerdns_admin::params::python_version,
-  ) inherits powerdns_admin::params {
+  String[1]                  $install_path,
+  String[1]                  $virtualenv_path,
+  String[1]                  $requirements_path,
+  String[1]                  $config_path,
+  Optional[Array[String[1]]] $required_packages,
+  Enum['running', 'stopped'] $service_ensure,
+  Boolean                    $service_enable,
+  Boolean                    $backend_install,
+  Boolean                    $backend_create_tables,
+  Optional[String[1]]        $db_root_password,
+  Optional[String[1]]        $db_password,
+  String[1]                  $log_level,
+  Boolean                    $signup_enable,
+  Optional[String[1]]        $pdns_api_key,
+  Optional[String[1]]        $pdns_api_url,
+  Integer[1]                 $workers,
+  Integer[2]                 $python_version,
+  ) {
+
+  $app_secret_key = fqdn_rand_string(20)
 
   contain powerdns_admin::install
   contain powerdns_admin::config
