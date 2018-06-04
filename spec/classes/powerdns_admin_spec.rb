@@ -21,7 +21,6 @@ describe 'powerdns_admin', type: :class do
           end
 
           it { is_expected.to compile.with_all_deps }
-          it { is_expected.to contain_class('powerdns_admin::params') }
         end
       end
     end
