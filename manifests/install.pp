@@ -7,7 +7,7 @@ class powerdns_admin::install {
     ensure   => present,
     provider => git,
     source   => 'https://github.com/ngoduykhanh/PowerDNS-Admin.git',
-    revision => 'master',
+    revision => '4daf6f72a75f406e93a622116ce1841b029efa54',
   }
 
   class { 'python' :
